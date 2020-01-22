@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"math"
+	"errors"
 )
 
 func main() {
@@ -68,4 +69,28 @@ func main() {
 	for key, value := range sides{
 		fmt.Println("key:", key, "value", value)
 	}
+
+	fmt.Println(sum(8, 11))
+
+	result, err := sqrt(15)
+
+	// function always returns a value for err and it is nil if there are no errors 
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
+}
+
+func sum(num1 int, num2 int) int {
+	return num1 + num2
+}
+
+func sqrt(x float64) (float64, error) {
+	if x < 0 {
+		return 0, errors.New("Undefined for negative numbers")
+	}
+
+	// the returned error value is nil if we make it this far
+	return math.Sqrt(x), nil
 }
