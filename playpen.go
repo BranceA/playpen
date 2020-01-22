@@ -38,4 +38,34 @@ func main() {
 	fmt.Println(testSlice)
 	testSlice = append(testSlice, 7)
 	fmt.Println(testSlice)
+
+	sides := make(map[string]int)
+
+	sides ["Triangle"] = 3
+	sides ["Square"] = 4
+	sides ["Pentagon"] = 5
+	fmt.Println(sides)
+	fmt.Println(sides["Square"])
+	delete(sides, "Square")
+	fmt.Println(sides)
+
+	for i := 0; i < len(testArrTwo); i++ {
+		fmt.Println(testArrTwo[i])
+	}
+
+	// basically a while loop 
+	j := 0
+	for j < len(testArray) {
+		fmt.Println(testArray[j])
+		j ++
+	}
+
+	// space between each comma separated value in println 
+	for index, value := range testSlice{
+		fmt.Println("index:", index, "value:", value)
+	}
+
+	for key, value := range sides{
+		fmt.Println("key:", key, "value", value)
+	}
 }
