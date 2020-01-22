@@ -80,6 +80,14 @@ func main() {
 	} else {
 		fmt.Println(result)
 	}
+
+	testPerson := person{name: "Brance", age: 31}
+	fmt.Println(testPerson)
+	fmt.Println(testPerson.name)
+
+	thisIsCool := 4
+	inc(&thisIsCool)
+	fmt.Println(thisIsCool)
 }
 
 func sum(num1 int, num2 int) int {
@@ -93,4 +101,13 @@ func sqrt(x float64) (float64, error) {
 
 	// the returned error value is nil if we make it this far
 	return math.Sqrt(x), nil
+}
+
+type person struct {
+	name string
+	age int
+}
+
+func inc(x *int){
+	*x++
 }
